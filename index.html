@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydromorph Index</title>
+    <title>The Hydromorph Index</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="hydro-section">
-        <h2>Hydromorph Index</h2>
+        <h2>The Hydromorph Index</h2>
 
-        <p><strong>Midpoint Timeframe:</strong> <span id="midpoint-display">Auto</span></p>
+        <label for="midpoint-select"><strong>Midpoint Timeframe:</strong></label>
+<select id="midpoint-select">
+    <option value="3M">3M</option>
+    <option value="5M">5M</option>
+    <option value="15M">15M</option>
+    <option value="30M">30M</option>
+    <option value="1H">1H</option>
+</select>
 
         <label for="sniper-entry">Sniper Entry Mode:</label>
         <input type="checkbox" id="sniper-entry">
@@ -21,6 +28,28 @@
             <label><input type="checkbox" id="ltf-toggle"> Include LTF</label>
             <label><input type="checkbox" id="htf-toggle"> Include HTF</label>
         </div>
+        
+        function updateTimeframes() {
+    let midpoint = document.getElementById("midpoint-select").value;
+    let ltf, htf;
+
+    // Define LTF & HTF based on selected midpoint
+    if (midpoint === "3M") { ltf = "2M"; htf = "15M"; }
+    else if (midpoint === "5M") { ltf = "3M"; htf = "30M"; }
+    else if (midpoint === "15M") { ltf = "5M"; htf = "1H"; }
+    else if (midpoint === "30M") { ltf = "15M"; htf = "4H"; }
+    else if (midpoint === "1H") { ltf = "30M"; htf = "4H"; }
+    
+    <p id="ltf-display">LTF: --</p>
+    <p id="htf-display">HTF: --</p>
+
+    // Update the UI with the selected timeframes
+    document.getElementById("ltf-display").innerText = `LTF: ${ltf}`;
+    document.getElementById("htf-display").innerText = `HTF: ${htf}`;
+}
+
+// Listen for dropdown changes
+document.getElementById("midpoint-select").addEventListener("change", updateTimeframes);
 
         <div id="hydro-output">
             <h3>Hydro Score: <span id="hydro-score">--</span></h3>
