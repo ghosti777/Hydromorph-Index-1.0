@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydromorph Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="hydro-section">
+        <h2>Hydromorph Index</h2>
+
+        <p><strong>Midpoint Timeframe:</strong> <span id="midpoint-display">Auto</span></p>
+
+        <label for="sniper-entry">Sniper Entry Mode:</label>
+        <input type="checkbox" id="sniper-entry">
+
+        <div id="timeframe-selection">
+            <p><strong>Additional Timeframes:</strong></p>
+            <label><input type="checkbox" id="ltf-toggle"> Include LTF</label>
+            <label><input type="checkbox" id="htf-toggle"> Include HTF</label>
+        </div>
+
+        <div id="hydro-output">
+            <h3>Hydro Score: <span id="hydro-score">--</span></h3>
+            <h3>Morphic Score: <span id="morphic-score">--</span></h3>
+            <p id="strength-rating">Strength Rating: --</p>
+        </div>
+
+        <button onclick="calculateHydro()">🔥 Calculate Hydro 🔥</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
