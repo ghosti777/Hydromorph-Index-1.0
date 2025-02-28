@@ -1,9 +1,9 @@
 /* 🔥 Base Styles */
 body {
     font-family: Arial, sans-serif;
-    background: url('Hydra.jpg') no-repeat center top fixed;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url('Hydra.jpg') no-repeat center top fixed !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
     color: white;
     text-align: center;
     margin: 0;
@@ -39,47 +39,11 @@ body::before {
     margin-top: 120px; /* Moves UI lower */
 }
 
-/* 🔥 **Make Indicators More Readable** */
-#midpoint-indicators, #ltf-indicators, #htf-indicators {
-    background: rgba(20, 20, 20, 0.75); /* Lighter background */
-    padding: 12px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 20px; /* More spacing */
-    width: 85%;
-    max-width: 500px;
-}
-
-/* 🔥 **Indicator Checkboxes - Bigger Click Target** */
-input[type="checkbox"] {
-    transform: scale(1.3);
-    margin-right: 8px;
-}
-
-/* 🔥 **Button Fix - More Contrast** */
-button {
-    background: linear-gradient(135deg, #0088ff, #0056b3);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6);
-    transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #004c99;
-    box-shadow: 0 0 20px rgba(0, 102, 255, 1);
-}
-
-/* 🔥 **Text Shadow for Visibility** */
-h2, h3, p {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-/* 🔥 **Mobile UI Adjustments** */
+/* 🔥 **Fix Mobile Background Display** */
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll !important;
+    }
     #hydro-section {
         width: 90%;
         margin-top: 80px;
