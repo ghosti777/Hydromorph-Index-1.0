@@ -1,4 +1,4 @@
-/* 🔥 Base Styles */
+/* 🔥 Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +12,6 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 /* 🔥 Background Image Layer */
@@ -29,72 +26,76 @@ body {
     z-index: -10;
 }
 
-/* 🔥 Dark Overlay for Readability */
+/* 🔥 Overlay for Text Visibility */
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.35);
     z-index: -5;
 }
 
-/* 🔥 Title Section */
-#title-section {
-    position: absolute;
-    top: 5vh; /* Moves title to the top */
-    width: 100%;
-    text-align: center;
-    font-size: 1.8rem;
+/* 🔥 Title Styling */
+#title-section h2 {
+    font-size: 2rem;
     font-weight: bold;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
 }
 
-/* 🔥 Main Content Box */
-#hydro-section {
-    background: transparent;
-    box-shadow: none;
-    padding: 20px;
+/* 🔥 Section Headers (LTF, Midpoint, HTF) */
+h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* 🔥 Color Differentiation for Sections */
+#ltf-indicators h4 {
+    color: #ffcc00; /* Gold for LTF */
+}
+
+#midpoint-indicators h4 {
+    color: #00ffcc; /* Cyan for Midpoint */
+}
+
+#htf-indicators h4 {
+    color: #ff6666; /* Red for HTF */
+}
+
+/* 🔥 Indicator Sections */
+#ltf-indicators, #midpoint-indicators, #htf-indicators {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 15px;
     border-radius: 12px;
-    width: 92%;
-    max-width: 420px;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* 🔥 Improve Text Visibility */
-h2, h3, p, label {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    color: white !important;
-}
-
-/* 🔥 Indicator Fields */
-fieldset {
+/* 🔥 Dropdowns & Inputs */
+select, input[type="checkbox"] {
+    margin: 5px 0;
+    padding: 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
     border: none;
-    padding: 8px;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 8px;
-}
-
-/* 🔥 Checkboxes Spacing */
-fieldset label {
-    display: block;
-    margin-bottom: 4px;
-}
-
-/* 🔥 Calculate Button Fixed at Bottom */
-#calculate-container {
-    position: fixed;
-    bottom: 5vh; /* Stays at the bottom */
-    width: 100%;
     text-align: center;
+    width: 90%;
 }
 
+/* 🔥 Highlight Dropdowns on Selection */
+select:focus {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+/* 🔥 Button Styling */
 button {
     background: rgba(0, 102, 255, 0.7);
     color: white;
@@ -104,8 +105,10 @@ button {
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
     transition: all 0.3s ease-in-out;
-    width: 85%;
-    max-width: 400px;
+    font-size: 1.1rem;
+    width: 90%;
+    max-width: 450px;
+    margin-top: 20px;
 }
 
 button:hover {
@@ -113,18 +116,13 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 102, 255, 1);
 }
 
-/* 🔥 Mobile-Specific Adjustments */
+/* 🔥 Mobile-Specific Fix */
 @media (max-width: 768px) {
-    #title-section {
-        font-size: 1.6rem;
-        top: 3vh;
-    }
-
     #hydro-section {
-        width: 95%;
+        width: 92%;
+        padding: 12px;
     }
-
-    #calculate-container {
-        bottom: 4vh;
+    select, input[type="checkbox"] {
+        width: 100%;
     }
 }
