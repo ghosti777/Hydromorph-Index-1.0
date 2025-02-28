@@ -14,7 +14,7 @@ html, body {
 body {
     background: url('Hydra1.jpg') no-repeat center center fixed;
     background-size: cover !important;
-    background-attachment: fixed !important; /* Ensures background stays fixed */
+    background-attachment: scroll !important; /* Ensures background stays fixed */
 }
 
 /* 🔥 Dark Overlay to Improve Readability */
