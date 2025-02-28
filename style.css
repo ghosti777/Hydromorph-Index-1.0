@@ -12,7 +12,7 @@ html, body {
 
 /* 🔥 Background Image - Ensuring Proper Loading */
 body {
-    background: url('Hydra1.jpg') no-repeat center center fixed;
+    background: url('hydra2.jpg') no-repeat center center fixed;
     background-size: cover !important;
     background-attachment: scroll !important; /* Ensures background stays fixed */
 }
