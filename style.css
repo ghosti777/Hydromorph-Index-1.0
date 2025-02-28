@@ -69,10 +69,7 @@ h2, h3, p {
 /* 🔥 Fix Mobile Background Issue */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll !important; /* Prevents background from disappearing */
-    }
-    #hydro-section {
-        width: 90%;
-        margin-top: 80px;
+        background-attachment: scroll !important;
+        min-height: 100vh;
     }
 }
