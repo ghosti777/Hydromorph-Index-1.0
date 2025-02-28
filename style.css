@@ -1,23 +1,22 @@
 /* 🔥 Base Styles */
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+body {
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     position: relative;
+
+    /* ✅ Force Mobile Background (Updated to hydra2) */
+    background-image: url('https://ghosti777.github.io/Hydromorph-Index-1.0/hydra2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-/* 🔥 Background Image - Ensuring Proper Loading */
-body {
-    background: url('hydra2.jpg') no-repeat center center fixed;
-    background-size: cover !important;
-    background-attachment: scroll !important; /* Ensures background stays fixed */
-}
-
-/* 🔥 Dark Overlay to Improve Readability */
+/* ✅ Dark Overlay for Readability */
 body::before {
     content: "";
     position: fixed;
@@ -25,14 +24,14 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* Adjust transparency */
+    background: rgba(0, 0, 0, 0.35); /* Adjustable darkness */
     z-index: -1;
 }
 
-/* 🔥 Hydro UI Box - Ensuring Visibility */
+/* ✅ Hydro UI Box - Keeps Visibility */
 #hydro-section {
-    background: rgba(15, 15, 35, 0.75);
-    box-shadow: 0 0 25px rgba(0, 102, 255, 0.6);
+    background: rgba(15, 15, 35, 0.85);
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
     padding: 20px;
     border-radius: 12px;
     margin: auto;
@@ -41,35 +40,17 @@ body::before {
     backdrop-filter: blur(5px);
     position: relative;
     z-index: 10;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
-/* 🔥 Button Glow Effect */
-button {
-    background: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
-    transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #0056b3;
-    box-shadow: 0 0 20px rgba(0, 102, 255, 1);
-}
-
-/* 🔥 Make the text pop more */
-h2, h3, p {
-    text-shadow: 2px 2px 11px rgba(0, 0, 0, 0.7);
-}
-
-/* 🔥 Fix Mobile Background Issue */
+/* ✅ Fix for Mobile */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll !important;
-        min-height: 100vh;
+        background-attachment: scroll !important; /* Fixes mobile background issues */
+        background-size: 100% auto !important;
+    }
+    #hydro-section {
+        width: 90%;
+        margin-top: 80px;
     }
 }
