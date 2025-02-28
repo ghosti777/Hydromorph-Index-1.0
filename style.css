@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 🔥 Background Image as a Separate Layer */
+/* 🔥 Background Image */
 #background-container {
     position: fixed;
     top: 0;
@@ -23,67 +23,85 @@ body {
     height: 100vh;
     background: url('https://raw.githubusercontent.com/ghosti777/Hydromorph-Index-1.0/main/hydra2.jpg') no-repeat center center;
     background-size: cover;
-    z-index: -10; /* Keeps it behind everything */
+    z-index: -10;
 }
 
-/* 🔥 Dark Overlay for Readability */
+/* 🔥 Dark Overlay */
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.35); /* Adjust opacity as needed */
+    background: rgba(0, 0, 0, 0.3); /* Adjust darkness */
     z-index: -5;
 }
 
-/* 🔥 Mobile-First UI Positioning */
-#/* 🔥 Make Hydro Box Transparent */
+/* 🔥 Make Hydro Box More Transparent & Refined */
 #hydro-section {
-    background: transparent !important; /* Fully removes background */
-    box-shadow: none !important; /* No shadows */
-    padding: 20px;
+    background: rgba(15, 15, 35, 0.5); /* Semi-transparent background */
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6);
+    padding: 18px;
     border-radius: 12px;
-    width: 90%; /* Adjust width for mobile */
+    width: 92%;
     max-width: 420px;
     margin: auto;
     text-align: center;
+    backdrop-filter: blur(4px); /* Smooth blur effect */
 }
 
 /* 🔥 Improve Text Visibility */
 h2, h3, p, label {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Adds visibility */
-    color: white !important; /* Ensure white text */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+    color: white !important;
 }
 
-/* 🔥 Remove Indicator Borders */
+/* 🔥 Indicator Section */
 fieldset {
-    border: none !important; /* Remove thick borders */
+    border: none !important;
     padding: 10px;
+    background: rgba(0, 0, 0, 0.4); /* Adds contrast */
+    border-radius: 8px;
+    margin-bottom: 5px;
 }
 
-/* 🔥 Button Enhancement */
+/* 🔥 Adjust Checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.2); /* Make them slightly larger */
+    margin-right: 5px;
+}
+
+/* 🔥 Sleeker Button */
 button {
-    background: rgba(0, 102, 255, 0.7); /* Slightly transparent blue */
+    background: linear-gradient(45deg, #0056b3, #007bff);
     color: white;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
+    box-shadow: 0 0 12px rgba(0, 102, 255, 0.7);
     transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background: rgba(0, 102, 255, 1);
-    box-shadow: 0 0 20px rgba(0, 102, 255, 1);
+    background: linear-gradient(45deg, #003d82, #0056b3);
+    box-shadow: 0 0 18px rgba(0, 102, 255, 1);
 }
 
-/* 🔥 Mobile-Specific Fix */
+/* 🔥 Mobile Adjustments */
 @media (max-width: 768px) {
     #hydro-section {
-        width: 92%;
-        top: 18vh; /* Moves even lower on smaller screens */
+        width: 94%;
+        margin-top: 10vh;
         padding: 12px;
+    }
+    
+    fieldset {
+        padding: 8px;
+    }
+    
+    button {
+        padding: 9px;
+        font-size: 14px;
     }
 }
