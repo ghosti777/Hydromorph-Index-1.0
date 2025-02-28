@@ -1,75 +1,139 @@
-<!-- 🔥 Background & Overlay -->
-<div id="background-container"></div>
-<div id="overlay"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hydromorph Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <body>
 
-<!-- 🔥 Title -->
-<div id="title-section">
-    <h2>The Hydromorph Index</h2>
+    <!-- 🔥 Background & Overlay -->
+    <div id="background-container"></div>
+    <div id="overlay"></div>
+
+    <!-- 🔥 Title at the Very Top -->
+    <div id="title-section">
+        <h2>The Hydromorph Index</h2>
+    </div>
+
+    <!-- 🔥 Main UI Box -->
+    <div id="hydro-section">
+        <!-- Midpoint Selection -->
+        <label for="midpoint-select"><strong>Midpoint Timeframe:</strong></label>
+        <select id="midpoint-select" onchange="updateTimeframes()">
+            <option value="3M">3M</option>
+            <option value="5M">5M</option>
+            <option value="15M">15M</option>
+            <option value="30M">30M</option>
+            <option value="1H">1H</option>
+        </select>
+
+        <!-- LTF & HTF Display -->
+        <p id="ltf-display">LTF: --</p>
+        <p id="htf-display">HTF: --</p>
+
+        <!-- Sniper Entry Toggle -->
+        <label for="sniper-entry">Sniper Entry Mode:</label>
+        <input type="checkbox" id="sniper-entry">
+
+        <!-- Hydro Strength Output -->
+        <div id="hydro-output">
+            <h3>Hydro Score: <span id="hydro-score">--</span></h3>
+            <h3>Morphic Score: <span id="morphic-score">--</span></h3>
+            <p id="strength-rating">Strength Rating: --</p>
+        </div>
+
+        <!-- LTF Section -->
+<div id="ltf-indicators">
+  <h4>LTF Indicators</h4>
+  <label for="dual-cloud-select-ltf"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-ltf">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
+
+  <label for="premium-discount-select-ltf"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-ltf">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
+
+  <label for="volume-surge-ltf"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-ltf">
+
+  <label for="divergence-select-ltf"><strong>Divergence:</strong></label>
+  <select id="divergence-select-ltf">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
 </div>
 
-<!-- 🔥 Main UI Box -->
-<div id="hydro-section">
-    
-    <!-- Midpoint Selection -->
-    <label for="midpoint-select"><strong>Midpoint Timeframe:</strong></label>
-    <select id="midpoint-select" onchange="updateTimeframes()">
-        <option value="3M">3M</option>
-        <option value="5M">5M</option>
-        <option value="15M">15M</option>
-        <option value="30M">30M</option>
-        <option value="1H">1H</option>
-    </select>
+<!-- Midpoint Section -->
+<div id="midpoint-indicators">
+  <h4>Midpoint Indicators</h4>
+  <label for="dual-cloud-select-midpoint"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-midpoint">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
 
-    <!-- LTF & HTF Display -->
-    <p id="ltf-display">LTF: --</p>
-    <p id="htf-display">HTF: --</p>
+  <label for="premium-discount-select-midpoint"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-midpoint">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
 
-    <!-- Sniper Entry Toggle -->
-    <label for="sniper-entry">Sniper Entry Mode:</label>
-    <input type="checkbox" id="sniper-entry">
+  <label for="volume-surge-midpoint"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-midpoint">
 
-    <!-- Hydro Strength Output -->
-    <div id="hydro-output">
-        <h3>Hydro Score: <span id="hydro-score">--</span></h3>
-        <h3>Morphic Score: <span id="morphic-score">--</span></h3>
-        <p id="strength-rating">Strength Rating: --</p>
-    </div>
+  <label for="divergence-select-midpoint"><strong>Divergence:</strong></label>
+  <select id="divergence-select-midpoint">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
+</div>
 
-    <!-- 🔥 Indicator Sections (LTF, Midpoint, HTF) -->
-    <div class="indicator-section">
-        <h4>LTF Indicators</h4>
-        <label>Dual Cloud Setup:</label>
-        <select id="dual-cloud-select-ltf">
-            <option value="1">Best Case (Both Aligned)</option>
-            <option value="2">Strong Case (Big Cloud Aligned)</option>
-            <option value="3">Moderate Case (Small Cloud Aligned)</option>
-            <option value="4">Worst Case (Neither Aligned)</option>
-        </select>
+<!-- HTF Section -->
+<div id="htf-indicators">
+  <h4>HTF Indicators</h4>
+  <label for="dual-cloud-select-htf"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-htf">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
 
-        <label>Entry Conditions:</label>
-        <select id="premium-discount-select-ltf">
-            <option value="1">Premium</option>
-            <option value="2">Discount</option>
-            <option value="3">FVG</option>
-        </select>
+  <label for="premium-discount-select-htf"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-htf">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
 
-        <label>Volume Surge:</label>
-        <input type="checkbox" id="volume-surge-ltf">
+  <label for="volume-surge-htf"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-htf">
 
-        <label>Divergence:</label>
-        <select id="divergence-select-ltf">
-            <option value="favorable">Favorable</option>
-            <option value="unfavorable">Unfavorable</option>
-        </select>
-    </div>
-
-    <!-- Repeat the same for Midpoint & HTF -->
-    
+  <label for="divergence-select-htf"><strong>Divergence:</strong></label>
+  <select id="divergence-select-htf">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
+</div>
     <!-- 🔥 Fixed Calculate Button -->
     <div id="calculate-container">
         <button id="calculate-button">🔥 Calculate Hydro 🔥</button>
     </div>
 
-</div>
+    <script src="script.js"></script>
 
-<script src="script.js"></script>
+</body>
