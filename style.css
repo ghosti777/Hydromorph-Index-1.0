@@ -38,24 +38,45 @@ body {
 }
 
 /* 🔥 Mobile-First UI Positioning */
+#/* 🔥 Make Hydro Box Transparent */
 #hydro-section {
-    background: rgba(15, 15, 35, 0.7); /* Lighter dark overlay for readability */
-    box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
-    padding: 15px;
+    background: transparent !important; /* Fully removes background */
+    box-shadow: none !important; /* No shadows */
+    padding: 20px;
     border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    backdrop-filter: blur(10px); /* Stronger blur instead of heavy darkening */
-    position: absolute;
-    top: 15vh; /* Moves UI lower */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    width: 90%; /* Adjust width for mobile */
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
 }
 
-/* 🔥 Make the text stand out more */
-h2, h3, p {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+/* 🔥 Improve Text Visibility */
+h2, h3, p, label {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Adds visibility */
+    color: white !important; /* Ensure white text */
+}
+
+/* 🔥 Remove Indicator Borders */
+fieldset {
+    border: none !important; /* Remove thick borders */
+    padding: 10px;
+}
+
+/* 🔥 Button Enhancement */
+button {
+    background: rgba(0, 102, 255, 0.7); /* Slightly transparent blue */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: rgba(0, 102, 255, 1);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 1);
 }
 
 /* 🔥 Mobile-Specific Fix */
