@@ -37,32 +37,43 @@ function calculateHydro() {
     } 
     // ✅ 30M remains unchanged at 0.1429
 
-    // Get selected midpoint indicators
+    // ✅ **Entry Precision Scoring Instead of Liquidity Zone**
+    let premiumDiscountBoost = document.getElementById("premium-discount-check").checked ? 8 : 0; 
+    let fvgBoost = document.getElementById("fvg-check").checked ? 6 : 0;
+    let orderBlockBoost = document.getElementById("order-block-check").checked ? 7 : 0;
+
+    // ✅ **Other Indicator Scoring**
+    let trendBoost = document.getElementById("trend-check").checked ? 10 : 0;
+    let volumeBoost = document.getElementById("volume-check").checked ? 7 : 0;
+    let divergenceBoost = document.getElementById("divergence-check").checked ? 6 : 0;
+
+    // ✅ Midpoint Calculation with Indicator Boosts
     let midpointStrength = 0;
     document.querySelectorAll(".midpoint-check:checked").forEach(el => {
         midpointStrength += parseFloat(el.value) || 0;
     });
+    midpointStrength += premiumDiscountBoost + fvgBoost + orderBlockBoost + trendBoost + volumeBoost + divergenceBoost;
 
-    // Get selected LTF indicators
+    // ✅ Get Selected LTF Indicators
     let ltfStrength = 0;
     document.querySelectorAll(".ltf-check:checked").forEach(el => {
         ltfStrength += parseFloat(el.value) || 0;
     });
 
-    // Get selected HTF indicators
+    // ✅ Get Selected HTF Indicators
     let htfStrength = 0;
     document.querySelectorAll(".htf-check:checked").forEach(el => {
         htfStrength += parseFloat(el.value) || 0;
     });
 
-    // Check if Sniper Entry is enabled
+    // ✅ Check if Sniper Entry is enabled
     let sniperMode = document.getElementById("sniper-entry").checked;
     
-    // Define weighting based on Sniper Entry toggle
+    // ✅ Define weighting based on Sniper Entry toggle
     let ltfWeight = sniperMode ? 0.45 : 0.2857;
     let htfWeight = sniperMode ? 0.40 : 0.5714;
 
-    // Compute Hydro Score using adjusted weights
+    // ✅ Compute Hydro Score using adjusted weights
     hydroScore = (midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight);
 
     // ✅ Ensure elements exist before modifying them
