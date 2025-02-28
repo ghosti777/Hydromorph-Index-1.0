@@ -72,10 +72,9 @@ function calculateHydro() {
     let ltfWeight = 0.40;
     let htfWeight = 0.45;
 
-    // ✅ Compute Hydro Score using adjusted weights
-    hydroScore = (midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight);
-
-    // ✅ Ensure elements exist before modifying them
+    hydroScore = ((midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight)) * 3.33;
+    
+       // ✅ Ensure elements exist before modifying them
     if (document.getElementById("hydro-score")) {
         document.getElementById("hydro-score").innerText = hydroScore.toFixed(1);
     }
