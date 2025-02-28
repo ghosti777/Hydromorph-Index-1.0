@@ -8,12 +8,19 @@
 </head>
 <body>
     
+  <body>
+
+    <!-- 🔥 Background & Overlay -->
     <div id="background-container"></div>
     <div id="overlay"></div>
 
-    <div id="hydro-section">
+    <!-- 🔥 Title at the Very Top -->
+    <div id="title-section">
         <h2>The Hydromorph Index</h2>
+    </div>
 
+    <!-- 🔥 Main UI Box -->
+    <div id="hydro-section">
         <!-- Midpoint Selection -->
         <label for="midpoint-select"><strong>Midpoint Timeframe:</strong></label>
         <select id="midpoint-select" onchange="updateTimeframes()">
@@ -39,43 +46,34 @@
             <p id="strength-rating">Strength Rating: --</p>
         </div>
 
-        <!-- Calculate Button (Fixed) -->
+        <!-- Indicator Groups -->
+        <fieldset id="midpoint-indicators">
+            <legend>Midpoint Indicators</legend>
+            <label><input type="checkbox" class="midpoint-check" value="10"> Indicator 1</label>
+            <label><input type="checkbox" class="midpoint-check" value="8"> Indicator 2</label>
+            <label><input type="checkbox" class="midpoint-check" value="-5"> Indicator 3 (Bad Signal)</label>
+        </fieldset>
+
+        <fieldset id="ltf-indicators">
+            <legend>LTF Indicators</legend>
+            <label><input type="checkbox" class="ltf-check" value="10"> Indicator 1</label>
+            <label><input type="checkbox" class="ltf-check" value="8"> Indicator 2</label>
+            <label><input type="checkbox" class="ltf-check" value="-5"> Indicator 3 (Bad Signal)</label>
+        </fieldset>
+
+        <fieldset id="htf-indicators">
+            <legend>HTF Indicators</legend>
+            <label><input type="checkbox" class="htf-check" value="10"> Indicator 1</label>
+            <label><input type="checkbox" class="htf-check" value="8"> Indicator 2</label>
+            <label><input type="checkbox" class="htf-check" value="-5"> Indicator 3 (Bad Signal)</label>
+        </fieldset>
+    </div>
+
+    <!-- 🔥 Fixed Calculate Button -->
+    <div id="calculate-container">
         <button id="calculate-button">🔥 Calculate Hydro 🔥</button>
     </div>
-    
-    <!-- Indicator Groups -->
-    <fieldset id="midpoint-indicators">
-        <legend>Midpoint Indicators</legend>
-        <label><input type="checkbox" class="midpoint-check" value="10"> Indicator 1</label>
-        <label><input type="checkbox" class="midpoint-check" value="8"> Indicator 2</label>
-        <label><input type="checkbox" class="midpoint-check" value="-5"> Indicator 3 (Bad Signal)</label>
-    </fieldset>
-
-    <fieldset id="ltf-indicators">
-        <legend>LTF Indicators</legend>
-        <label><input type="checkbox" class="ltf-check" value="10"> Indicator 1</label>
-        <label><input type="checkbox" class="ltf-check" value="8"> Indicator 2</label>
-        <label><input type="checkbox" class="ltf-check" value="-5"> Indicator 3 (Bad Signal)</label>
-    </fieldset>
-
-    <fieldset id="htf-indicators">
-        <legend>HTF Indicators</legend>
-        <label><input type="checkbox" class="htf-check" value="10"> Indicator 1</label>
-        <label><input type="checkbox" class="htf-check" value="8"> Indicator 2</label>
-        <label><input type="checkbox" class="htf-check" value="-5"> Indicator 3 (Bad Signal)</label>
-    </fieldset>
-    
-    <!-- ✅ Smart Entry Scoring -->
-<label><input type="checkbox" id="premium-discount-check"> Entry in Premium/Discount</label>
-<label><input type="checkbox" id="fvg-check"> Aligned with Fair Value Gap (FVG)</label>
-<label><input type="checkbox" id="order-block-check"> Order Block/Breaker Confirmation</label>
-
-<!-- ✅ Other Indicators -->
-<label><input type="checkbox" id="trend-check"> Strong Trend (Dual Cloud)</label>
-<label><input type="checkbox" id="volume-check"> High Volume Surge</label>
-<label><input type="checkbox" id="divergence-check"> Valid Divergence</label>
 
     <script src="script.js"></script>
 
 </body>
-</html>
