@@ -1,18 +1,23 @@
 /* 🔥 Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    background: url('https://ghosti777.github.io/Hydromorph-Index-1.0/Hydra.jpg') no-repeat center center !important;
-    background-size: cover !important;
-    background-attachment: scroll !important; /* Fixes mobile background issues */
-    color: white;
-    text-align: center;
+html, body {
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
     position: relative;
 }
 
-/* 🔥 Dark Overlay to Keep Text Readable */
+/* 🔥 Background Image - Ensuring Proper Loading */
+body {
+    background: url('https://ghosti777.github.io/Hydromorph-Index-1.0/Hydra.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-attachment: fixed !important; /* Ensures background stays fixed */
+}
+
+/* 🔥 Dark Overlay to Improve Readability */
 body::before {
     content: "";
     position: fixed;
@@ -20,11 +25,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* Reduced darkness */
+    background: rgba(0, 0, 0, 0.35); /* Adjust transparency */
     z-index: -1;
 }
 
-/* 🔥 Hydro UI Box - Ensures Visibility */
+/* 🔥 Hydro UI Box - Ensuring Visibility */
 #hydro-section {
     background: rgba(15, 15, 35, 0.75);
     box-shadow: 0 0 25px rgba(0, 102, 255, 0.6);
@@ -39,10 +44,32 @@ body::before {
     margin-top: 120px;
 }
 
-/* 🔥 Mobile-Specific Fix */
+/* 🔥 Button Glow Effect */
+button {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+    box-shadow: 0 0 20px rgba(0, 102, 255, 1);
+}
+
+/* 🔥 Make the text pop more */
+h2, h3, p {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* 🔥 Fix Mobile Background Issue */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll !important;
+        background-attachment: scroll !important; /* Prevents background from disappearing */
     }
     #hydro-section {
         width: 90%;
