@@ -33,7 +33,7 @@ function calculateHydro() {
     if (["1M", "2M", "3M", "5M"].includes(midpoint)) {
         midpointWeight += 0.0429; // Flat +30% boost
     } else if (midpoint === "15M") {
-        midpointWeight += 0.025; // Flat +17.5% boost
+        midpointWeight += 0.032; // Flat +17.5% boost
     } 
     // ✅ 30M remains unchanged at 0.1429
 
