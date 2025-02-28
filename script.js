@@ -17,25 +17,28 @@ function updateTimeframes() {
 // Attach event listener to update LTF/HTF when midpoint changes
 document.getElementById("midpoint-select").addEventListener("change", updateTimeframes);
 
+// ✅ Add event listener for "Calculate Hydro" button
+document.getElementById("calculate-button").addEventListener("click", calculateHydro);
+
 function calculateHydro() {
     let hydroScore = 0;
 
     // Get selected midpoint indicators
     let midpointStrength = 0;
     document.querySelectorAll(".midpoint-check:checked").forEach(el => {
-        midpointStrength += parseFloat(el.value);
+        midpointStrength += parseFloat(el.value) || 0; // ✅ Prevent NaN errors
     });
 
     // Get selected LTF indicators
     let ltfStrength = 0;
     document.querySelectorAll(".ltf-check:checked").forEach(el => {
-        ltfStrength += parseFloat(el.value);
+        ltfStrength += parseFloat(el.value) || 0;
     });
 
     // Get selected HTF indicators
     let htfStrength = 0;
     document.querySelectorAll(".htf-check:checked").forEach(el => {
-        htfStrength += parseFloat(el.value);
+        htfStrength += parseFloat(el.value) || 0;
     });
 
     // Check if Sniper Entry is enabled
@@ -49,16 +52,18 @@ function calculateHydro() {
     // Compute Hydro Score using weights
     hydroScore = (midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight);
 
-    // Display Hydro Score
-    document.getElementById("hydro-score").innerText = hydroScore.toFixed(1);
+    // ✅ Ensure elements exist before modifying them
+    if (document.getElementById("hydro-score")) {
+        document.getElementById("hydro-score").innerText = hydroScore.toFixed(1);
+    }
 
-    // Assign Strength Rating
     let rating = hydroScore >= 90 ? "🔥 Ultra Strong"
         : hydroScore >= 75 ? "✅ Strong"
         : hydroScore >= 50 ? "⚠️ Moderate"
         : hydroScore >= 30 ? "❓ Low"
         : "🚫 Weak";
 
-    document.getElementById("strength-rating").innerText = `Strength Rating: ${rating}`;
-}
+    if (document.getElementById("strength-rating")) {
+        document.getElementById("strength-rating").innerText = `Strength Rating: ${rating}`;
+    }
 }
