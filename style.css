@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background: url('Hydra.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     text-align: center;
     margin: 0;
@@ -9,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-/* Dark Overlay to Keep Text Readable */
+/* 🔥 Dark Overlay to Keep Text Readable */
 body::before {
     content: "";
     position: fixed;
@@ -17,11 +18,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust transparency */
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
     z-index: -1;
 }
 
-/* Hydro Section - Adding Glow & Contrast */
+/* 🔥 Hydro Section - Adding Glow & Contrast */
 #hydro-section {
     background: rgba(15, 15, 35, 0.85);
     box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
@@ -29,10 +30,11 @@ body::before {
     border-radius: 12px;
     margin: auto;
     width: 50%;
+    max-width: 450px; /* Prevents UI from getting too wide */
     backdrop-filter: blur(6px); /* Slight Blur for Depth */
 }
 
-/* Button Glow Effect */
+/* 🔥 Button Glow Effect */
 button {
     background: #007bff;
     color: white;
@@ -49,35 +51,7 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 102, 255, 1);
 }
 
-body {
-    background: url('hydra.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-/* Add a dark translucent overlay for better readability */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust darkness level */
-    z-index: -1;
-}
-
-/* Adjust UI box so it doesn’t block the best parts */
-#hydro-section {
-    background: rgba(20, 20, 20, 0.85); /* Darkened semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px; /* Ensures it’s not too wide */
-    margin: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Make the text pop more */
+/* 🔥 Make the text pop more */
 h2, h3, p {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
