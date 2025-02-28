@@ -46,29 +46,89 @@
             <p id="strength-rating">Strength Rating: --</p>
         </div>
 
-        <!-- Indicator Groups -->
-        <fieldset id="midpoint-indicators">
-            <legend>Midpoint Indicators</legend>
-            <label><input type="checkbox" class="midpoint-check" value="10"> Indicator 1</label>
-            <label><input type="checkbox" class="midpoint-check" value="8"> Indicator 2</label>
-            <label><input type="checkbox" class="midpoint-check" value="-5"> Indicator 3 (Bad Signal)</label>
-        </fieldset>
+        <!-- LTF Section -->
+<div id="ltf-indicators">
+  <h4>LTF Indicators</h4>
+  <label for="dual-cloud-select-ltf"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-ltf">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
 
-        <fieldset id="ltf-indicators">
-            <legend>LTF Indicators</legend>
-            <label><input type="checkbox" class="ltf-check" value="10"> Indicator 1</label>
-            <label><input type="checkbox" class="ltf-check" value="8"> Indicator 2</label>
-            <label><input type="checkbox" class="ltf-check" value="-5"> Indicator 3 (Bad Signal)</label>
-        </fieldset>
+  <label for="premium-discount-select-ltf"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-ltf">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
 
-        <fieldset id="htf-indicators">
-            <legend>HTF Indicators</legend>
-            <label><input type="checkbox" class="htf-check" value="10"> Indicator 1</label>
-            <label><input type="checkbox" class="htf-check" value="8"> Indicator 2</label>
-            <label><input type="checkbox" class="htf-check" value="-5"> Indicator 3 (Bad Signal)</label>
-        </fieldset>
-    </div>
+  <label for="volume-surge-ltf"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-ltf">
 
+  <label for="divergence-select-ltf"><strong>Divergence:</strong></label>
+  <select id="divergence-select-ltf">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
+</div>
+
+<!-- Midpoint Section -->
+<div id="midpoint-indicators">
+  <h4>Midpoint Indicators</h4>
+  <label for="dual-cloud-select-midpoint"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-midpoint">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
+
+  <label for="premium-discount-select-midpoint"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-midpoint">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
+
+  <label for="volume-surge-midpoint"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-midpoint">
+
+  <label for="divergence-select-midpoint"><strong>Divergence:</strong></label>
+  <select id="divergence-select-midpoint">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
+</div>
+
+<!-- HTF Section -->
+<div id="htf-indicators">
+  <h4>HTF Indicators</h4>
+  <label for="dual-cloud-select-htf"><strong>Dual Cloud Setup:</strong></label>
+  <select id="dual-cloud-select-htf">
+    <option value="1">Best Case (Both Aligned)</option>
+    <option value="2">Strong Case (Big Cloud Aligned)</option>
+    <option value="3">Moderate Case (Small Cloud Aligned)</option>
+    <option value="4">Worst Case (Neither Aligned)</option>
+  </select>
+
+  <label for="premium-discount-select-htf"><strong>Entry Conditions:</strong></label>
+  <select id="premium-discount-select-htf">
+    <option value="1">Premium</option>
+    <option value="2">Discount</option>
+    <option value="3">FVG</option>
+  </select>
+
+  <label for="volume-surge-htf"><strong>Volume Surge:</strong></label>
+  <input type="checkbox" id="volume-surge-htf">
+
+  <label for="divergence-select-htf"><strong>Divergence:</strong></label>
+  <select id="divergence-select-htf">
+    <option value="favorable">Favorable</option>
+    <option value="unfavorable">Unfavorable</option>
+  </select>
+</div>
     <!-- 🔥 Fixed Calculate Button -->
     <div id="calculate-container">
         <button id="calculate-button">🔥 Calculate Hydro 🔥</button>
