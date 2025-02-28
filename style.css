@@ -1,34 +1,43 @@
-/* 🔥 Base Styles */
+/* 🔥 Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
-    margin: 0;
-    padding: 0;
     min-height: 100vh;
     position: relative;
-
-    /* ✅ Force Mobile Background (Updated to hydra2) */
-    background-image: url('https://ghosti777.github.io/Hydromorph-Index-1.0/hydra2.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
-/* ✅ Dark Overlay for Readability */
-body::before {
-    content: "";
+/* 🔥 Background Image as a Separate Layer */
+#background-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* Adjustable darkness */
-    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/ghosti777/Hydromorph-Index-1.0/main/hydra2.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -10; /* Keeps it behind everything */
 }
 
-/* ✅ Hydro UI Box - Keeps Visibility */
+/* 🔥 Dark Overlay for Readability */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.35); /* Adjust opacity as needed */
+    z-index: -5;
+}
+
+/* 🔥 Hydro UI Box - Keeps it Visible */
 #hydro-section {
     background: rgba(15, 15, 35, 0.85);
     box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
@@ -40,15 +49,11 @@ body::before {
     backdrop-filter: blur(5px);
     position: relative;
     z-index: 10;
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
-/* ✅ Fix for Mobile */
+/* 🔥 Mobile-Specific Fix */
 @media (max-width: 768px) {
-    body {
-        background-attachment: scroll !important; /* Fixes mobile background issues */
-        background-size: 100% auto !important;
-    }
     #hydro-section {
         width: 90%;
         margin-top: 80px;
