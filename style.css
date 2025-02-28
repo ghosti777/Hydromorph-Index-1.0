@@ -63,7 +63,7 @@ button:hover {
 
 /* 🔥 Make the text pop more */
 h2, h3, p {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 11px rgba(0, 0, 0, 0.7);
 }
 
 /* 🔥 Fix Mobile Background Issue */
