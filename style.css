@@ -1,9 +1,9 @@
 /* 🔥 Base Styles */
 body {
     font-family: Arial, sans-serif;
-    background: url('Hydra.jpg') no-repeat center top fixed !important;
+    background: url('Hydra.jpg') no-repeat center center !important;
     background-size: cover !important;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important; /* Fixes mobile background issues */
     color: white;
     text-align: center;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     position: relative;
 }
 
-/* 🔥 **Lighter Overlay** to Enhance Hydra Visibility */
+/* 🔥 Dark Overlay to Keep Text Readable */
 body::before {
     content: "";
     position: fixed;
@@ -24,22 +24,22 @@ body::before {
     z-index: -1;
 }
 
-/* 🔥 **UI Box - Lighter & Lower** */
+/* 🔥 Hydro UI Box - Ensures Visibility */
 #hydro-section {
-    background: rgba(15, 15, 35, 0.75); /* Slightly more transparent */
+    background: rgba(15, 15, 35, 0.75);
     box-shadow: 0 0 25px rgba(0, 102, 255, 0.6);
     padding: 20px;
     border-radius: 12px;
     margin: auto;
     width: 50%;
-    max-width: 420px; /* Prevents UI from being too wide */
+    max-width: 420px;
     backdrop-filter: blur(5px);
     position: relative;
     z-index: 10;
-    margin-top: 120px; /* Moves UI lower */
+    margin-top: 120px;
 }
 
-/* 🔥 **Fix Mobile Background Display** */
+/* 🔥 Mobile-Specific Fix */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll !important;
