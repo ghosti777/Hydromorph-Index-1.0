@@ -23,10 +23,24 @@ document.getElementById("calculate-button").addEventListener("click", calculateH
 function calculateHydro() {
     let hydroScore = 0;
 
+    // Get selected midpoint timeframe
+    let midpoint = document.getElementById("midpoint-select").value;
+
+    // Base midpoint weight
+    let midpointWeight = 0.1429; // Default
+
+    // ✅ Dynamic Midpoint Boost Adjustments
+    if (["1M", "2M", "3M", "5M"].includes(midpoint)) {
+        midpointWeight += 0.0429; // Flat +30% boost
+    } else if (midpoint === "15M") {
+        midpointWeight += 0.025; // Flat +17.5% boost
+    } 
+    // ✅ 30M remains unchanged at 0.1429
+
     // Get selected midpoint indicators
     let midpointStrength = 0;
     document.querySelectorAll(".midpoint-check:checked").forEach(el => {
-        midpointStrength += parseFloat(el.value) || 0; // ✅ Prevent NaN errors
+        midpointStrength += parseFloat(el.value) || 0;
     });
 
     // Get selected LTF indicators
@@ -47,9 +61,8 @@ function calculateHydro() {
     // Define weighting based on Sniper Entry toggle
     let ltfWeight = sniperMode ? 0.45 : 0.2857;
     let htfWeight = sniperMode ? 0.40 : 0.5714;
-    let midpointWeight = 0.1429;
 
-    // Compute Hydro Score using weights
+    // Compute Hydro Score using adjusted weights
     hydroScore = (midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight);
 
     // ✅ Ensure elements exist before modifying them
