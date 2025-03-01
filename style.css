@@ -127,8 +127,14 @@ button:hover {
     }
 }
 
-label input[type="checkbox"] {
-    margin-left: 8px; /* Space between text and checkbox */
+label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px; /* Adjust spacing */
     transform: scale(1.2); /* Optional: Makes checkbox slightly bigger */
-    vertical-align: middle; /* Aligns checkbox with text */
 }
