@@ -127,7 +127,7 @@ button:hover {
     }
 }
 
-/* 🔥 Fix Alignment for Volume Surge & Checkboxes */
+/* 🔥 Fix Alignment for Volume Surge Checkboxes */
 .inline-checkbox {
     display: flex;
     align-items: center;
@@ -136,7 +136,7 @@ button:hover {
     margin: 5px 0;
 }
 
-/* 🔥 Adjust Checkbox Placement */
+/* 🔥 Ensure Proper Checkbox & Label Spacing */
 .inline-checkbox label {
     margin: 0;
     flex-grow: 1;
