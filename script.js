@@ -52,7 +52,7 @@ function calculateHydro() {
         score += volumeSurge;
 
         let divergenceValue = document.getElementById(`divergence-select-${section}`).value;
-        let divergenceScore = { "favorable": 6, "unfavorable": -4 };
+        let divergenceScore = { "favorable": 6, "unfavorable": -4, "neutral": 0 };
         score += divergenceScore[divergenceValue] || 0;
 
         return score;
