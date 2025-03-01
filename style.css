@@ -146,19 +146,23 @@ select:focus {
 }
 
 #calculate-hydro {
-    display: block;
-    margin: 20px auto; /* Centers horizontally */
-    background: linear-gradient(135deg, #0077ff, #00ccff);
+    background: linear-gradient(135deg, #0077ff, #00ccff); /* Strong blue gradient */
     color: white;
     padding: 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.1rem;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Text glow */
     box-shadow: 0 0 20px rgba(0, 102, 255, 1), 0 0 40px rgba(0, 102, 255, 0.7);
     transition: all 0.3s ease-in-out;
     animation: hydroGlow 1.5s infinite alternate ease-in-out;
+    
+    /* 🔥 Full-width like Pyro */
+    width: 100%;
+    max-width: 500px; /* Keeps it from being *too* stretched on large screens */
+    display: block;
+    margin: 20px auto; /* Centers it */
 }
 
 /* Pulsing Glow Effect */
