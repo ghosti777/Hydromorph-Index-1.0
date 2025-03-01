@@ -51,20 +51,20 @@ body {
 }
 
 #morphic-score {
-    font-size: 3rem; /* Larger size */
+    font-size: 1.5rem; /* Larger size */
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(135deg, #0077ff, #00ccff); /* Sleek blue gradient */
     text-shadow: 0 0 10px rgba(0, 204, 255, 0.8); /* Soft glow */
     display: inline-block;
-    padding: 8px 17px;
-    border-radius: 7px;
+    padding: 12px 22px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 204, 255, 0.4); /* Slight depth effect */
 }
 
 em {
     font-style: italic;
-    font-size; 18px;
+    font-size: 18px;
 }
 
 #pyro-score {
