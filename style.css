@@ -80,7 +80,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
     margin-top: 30px; /* More spacing above */
     margin-bottom: 20px; /* More spacing below */
-    font-style: italic;  /* ✅ This makes everything inside italic
+    font-style: italic;  /* ✅ This makes everything inside italic */
 }
 
 #pyro-score {
