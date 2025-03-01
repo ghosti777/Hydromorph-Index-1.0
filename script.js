@@ -131,7 +131,7 @@ function updateMorphicAnalysis(morphicScore) {
 
     let analysisElement = document.getElementById("morphic-analysis");
     if (analysisElement) {
-        analysisElement.innerHTML = analysisText;
+    analysisElement.innerHTML = `<em>${analysisText}</em>`;
         console.log("Morphic Analysis Updated:", analysisText);
     } else {
         console.error("Morphic Analysis element NOT found.");
