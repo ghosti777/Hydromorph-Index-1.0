@@ -116,17 +116,6 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 102, 255, 1);
 }
 
-/* 🔥 Mobile-Specific Fix */
-@media (max-width: 768px) {
-    #hydro-section {
-        width: 92%;
-        padding: 12px;
-    }
-    select, input[type="checkbox"] {
-        width: 100%;
-    }
-}
-
 /* 🔥 Fix Alignment for Volume Surge */
 .inline-checkbox {
     display: flex;
@@ -156,4 +145,30 @@ label[for^="divergence-select"] {
     display: block;
     text-align: left;
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    /* 🔥 Force Volume Surge & Checkbox to Stay Inline */
+    .inline-checkbox {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents wrapping */
+        align-items: center;
+        justify-content: space-between; /* Ensures checkbox is on the right */
+        width: 100%;
+    }
+
+    /* 🔥 Keep "Volume Surge" on One Line */
+    .inline-checkbox label {
+        flex-grow: 1;
+        text-align: left;
+        white-space: nowrap; /* Prevents breaking into two lines */
+        font-size: 0.95rem; /* Slightly reduce font size for spacing */
+    }
+
+    /* 🔥 Move Checkbox Fully to the Right */
+    .inline-checkbox input[type="checkbox"] {
+        margin-left: auto; /* Pushes checkbox to the right */
+        margin-right: 8px; /* Adds spacing from edge */
+        transform: scale(1.2); /* Ensures it's visible */
+    }
 }
