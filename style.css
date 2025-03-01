@@ -41,7 +41,7 @@ body {
     z-index: -5;
 }
 
-##title-section h2 {
+#title-section h2 {
     font-family: 'Uncial Antiqua', serif; /* Legendary look */
     font-size: 2.5rem; /* Adjust as needed */
     font-weight: bold;
@@ -135,19 +135,28 @@ select:focus {
 }
 
 /* 🔥 Button Styling */
-button {
-    background: rgba(0, 102, 255, 0.7);
+#calculate-hydro {
+    background: linear-gradient(135deg, #0077ff, #00ccff); /* Stronger blue gradient */
     color: white;
     padding: 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
-    transition: all 0.3s ease-in-out;
     font-size: 1.1rem;
-    width: 90%;
-    max-width: 450px;
-    margin-top: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Text glow */
+    box-shadow: 0 0 20px rgba(0, 102, 255, 1), 0 0 40px rgba(0, 102, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    animation: hydroGlow 1.5s infinite alternate ease-in-out;
+}
+
+/* Pulsing Glow Effect */
+@keyframes hydroGlow {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 102, 255, 1), 0 0 30px rgba(0, 102, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(0, 102, 255, 1), 0 0 50px rgba(0, 102, 255, 0.9);
+    }
 }
 
 button:hover {
