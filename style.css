@@ -50,6 +50,10 @@ body {
     transition: text-shadow 0.2s ease-in-out;
 }
 
+em {
+    font-style: italic;
+}
+
 #pyro-score {
     width: 90%;
     max-width: 450px;
