@@ -41,18 +41,15 @@ body {
     z-index: -5;
 }
 
-#title-section h2 {
-    font-family: 'Uncial Antiqua', serif; 
-    font-size: 2.5rem; /* Slightly larger for impact */
+##title-section h2 {
+    font-family: 'Uncial Antiqua', serif; /* Legendary look */
+    font-size: 2.5rem; /* Adjust as needed */
     font-weight: bold;
-    color: #00aaff; /* Keep the Electric Blue */
+    color: black; /* Inner text color (black) */
     text-shadow: 
-        -2px -2px 0 black,  
-         2px -2px 0 black,  
-        -2px  2px 0 black,  
-         2px  2px 0 black,  
-         0px  0px 10px rgba(0, 170, 255, 0.75), /* Outer blue glow */
-         0px  0px 20px rgba(0, 170, 255, 0.5); /* Subtle larger glow */
+        0px 0px 10px rgba(0, 170, 255, 0.9), /* Strong electric blue glow */
+        0px 0px 20px rgba(0, 170, 255, 0.75), /* Mid-layer glow */
+        0px 0px 30px rgba(0, 170, 255, 0.5); /* Outer softer glow */
     transition: text-shadow 0.2s ease-in-out;
 }
 
