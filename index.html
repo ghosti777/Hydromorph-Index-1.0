@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hydromorph Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔥 Background & Overlay -->
+    <div id="background-container"></div>
+    <div id="overlay"></div>
+
+    <!-- 🔥 Title at the Very Top -->
+    <div id="title-section">
+        <h2>The Hydromorph Index</h2>
+    </div>
+
+    <!-- 🔥 Main UI Box -->
+    <div id="hydro-section">
+        <!-- Midpoint Selection -->
+        <label for="midpoint-select"><strong>Midpoint Timeframe:</strong></label>
+        <select id="midpoint-select" onchange="updateTimeframes()">
+            <option value="3M">3M</option>
+            <option value="5M">5M</option>
+            <option value="15M">15M</option>
+            <option value="30M">30M</option>
+            <option value="1H">1H</option>
+        </select>
+
+        <!-- LTF & HTF Display -->
+        <p id="ltf-display">LTF: --</p>
+        <p id="htf-display">HTF: --</p>
+
+        <!-- Sniper Entry Toggle -->
+        <label for="sniper-entry">Sniper Entry Mode:</label>
+        <input type="checkbox" id="sniper-entry">
+
+        <!-- Hydro Strength Output -->
+        <div id="hydro-output">
+            <h3>Hydro Score: <span id="hydro-score">--</span></h3>
+            <h3>Morphic Score: <span id="morphic-score">--</span></h3>
+            <p id="strength-rating">Strength Rating: --</p>
+        </div>
+    </div>
+
     <!-- 🔥 LTF Section -->
     <div id="ltf-indicators">
         <h4>LTF Indicators</h4>
@@ -16,9 +63,8 @@
             <option value="3">FVG</option>
         </select>
 
-        <label for="volume-surge-ltf"><strong>Volume Surge:</strong> 
-            <input type="checkbox" id="volume-surge-ltf">
-        </label>
+        <label for="volume-surge-ltf">Volume Surge:</label>
+        <input type="checkbox" id="volume-surge-ltf">
 
         <label for="divergence-select-ltf">Divergence:</label>
         <select id="divergence-select-ltf">
@@ -45,9 +91,8 @@
             <option value="3">FVG</option>
         </select>
 
-        <label for="volume-surge-midpoint"><strong>Volume Surge:</strong> 
-            <input type="checkbox" id="volume-surge-midpoint">
-        </label>
+        <label for="volume-surge-midpoint">Volume Surge:</label>
+        <input type="checkbox" id="volume-surge-midpoint">
 
         <label for="divergence-select-midpoint">Divergence:</label>
         <select id="divergence-select-midpoint">
@@ -74,9 +119,8 @@
             <option value="3">FVG</option>
         </select>
 
-        <label for="volume-surge-htf"><strong>Volume Surge:</strong> 
-            <input type="checkbox" id="volume-surge-htf">
-        </label>
+        <label for="volume-surge-htf">Volume Surge:</label>
+        <input type="checkbox" id="volume-surge-htf">
 
         <label for="divergence-select-htf">Divergence:</label>
         <select id="divergence-select-htf">
@@ -84,3 +128,13 @@
             <option value="unfavorable">Unfavorable</option>
         </select>
     </div>
+
+    <!-- 🔥 Fixed Calculate Button -->
+    <div id="calculate-container">
+        <button id="calculate-button">🔥 Calculate Hydro 🔥</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
