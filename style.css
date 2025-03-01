@@ -127,25 +127,24 @@ button:hover {
     }
 }
 
-/* 🔥 Fix Alignment for Volume Surge Checkboxes */
+/* 🔥 Fix Alignment for Volume Surge */
 .inline-checkbox {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures the text stays on the left and checkbox on the right */
     width: 100%;
     margin: 5px 0;
 }
 
-/* 🔥 Ensure Proper Checkbox & Label Spacing */
+/* 🔥 Ensure Proper Checkbox Placement */
 .inline-checkbox label {
-    margin: 0;
-    flex-grow: 1;
+    flex-grow: 1; /* Allows the text to take up remaining space */
     text-align: left;
 }
 
 .inline-checkbox input[type="checkbox"] {
-    margin-left: 10px; /* Space between text and checkbox */
-    transform: scale(1.2); /* Slightly larger checkbox */
+    margin-left: auto; /* Pushes checkbox to the right */
+    transform: scale(1.2); /* Slightly larger checkbox for visibility */
     vertical-align: middle;
 }
 
