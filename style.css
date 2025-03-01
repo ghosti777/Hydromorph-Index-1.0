@@ -147,16 +147,27 @@ button:hover {
 
 @media (max-width: 768px) {
     .inline-checkbox {
+        display: flex;
+        flex-direction: row; /* Ensures proper alignment */
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        padding-right: 25px; /* Ensures extra space on mobile */
+        padding-right: 20px; /* Adds space for checkbox */
     }
 
     .inline-checkbox label {
         flex-grow: 1;
-        font-size: 0.95rem; /* Adjust font size slightly */
+        font-size: 1rem; /* Keeps text readable */
+        white-space: nowrap; /* Prevents text from breaking */
+        overflow: hidden; /* Ensures no weird layout shifting */
+        text-overflow: ellipsis; /* Adds "..." if text is too long */
     }
 
     .inline-checkbox input[type="checkbox"] {
-        margin-right: 10px; /* Keeps spacing consistent */
+        width: 20px; /* Forces consistent size */
+        height: 20px;
+        margin-left: auto; /* Pushes checkbox far right */
+        margin-right: 5px; /* Prevents it from touching edge */
+        transform: scale(1.2); /* Keeps it touch-friendly */
     }
 }
