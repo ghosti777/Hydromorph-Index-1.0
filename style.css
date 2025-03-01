@@ -42,11 +42,16 @@ body {
 
 #title-section h2 {
     font-family: 'Marcellus SC', serif;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Slightly larger for impact */
     font-weight: bold;
-    color: #00aaff; /* Electric Blue */
-    text-shadow: 0px 0px 10px rgba(0, 170, 255, 0.75), 
-                 0px 0px 20px rgba(0, 170, 255, 0.5); /* Subtle Glow */
+    color: #00aaff; /* Keep the Electric Blue */
+    text-shadow: 
+        -2px -2px 0 black,  
+         2px -2px 0 black,  
+        -2px  2px 0 black,  
+         2px  2px 0 black,  
+         0px  0px 10px rgba(0, 170, 255, 0.75), /* Outer blue glow */
+         0px  0px 20px rgba(0, 170, 255, 0.5); /* Subtle larger glow */
     transition: text-shadow 0.2s ease-in-out;
 }
 
