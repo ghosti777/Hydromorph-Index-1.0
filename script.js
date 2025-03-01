@@ -20,6 +20,10 @@ document.getElementById("midpoint-select").addEventListener("change", updateTime
 // ✅ Add event listener for "Calculate Hydro" button
 document.getElementById("calculate-button").addEventListener("click", calculateHydro);
 
+function getPyroScore() {
+    return parseFloat(document.getElementById("pyro-score").value) || 0;
+}
+
 function calculateHydro() {
     let hydroScore = 0;
 
