@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Marcellus SC', serif;
     color: white;
     text-align: center;
     min-height: 100vh;
@@ -48,6 +48,18 @@ body {
                  0px 0px 20px rgba(0, 170, 255, 0.5); /* Subtle Glow */
     letter-spacing: 1px; /* Just a little crispness */
     transition: text-shadow 0.2s ease-in-out;
+}
+
+#morphic-score {
+    font-size: 2rem; /* Larger size */
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0077ff, #00ccff); /* Sleek blue gradient */
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.8); /* Soft glow */
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 204, 255, 0.4); /* Slight depth effect */
 }
 
 em {
