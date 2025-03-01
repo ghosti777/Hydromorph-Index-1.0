@@ -79,19 +79,6 @@ function calculateHydro() {
     } else {
         console.error("Hydro Score element NOT found.");
     }
-
-    let rating = hydroScore >= 90 ? "🔥 Ultra Strong"
-        : hydroScore >= 75 ? "✅ Strong"
-        : hydroScore >= 50 ? "⚠️ Moderate"
-        : hydroScore >= 30 ? "❓ Low"
-        : "🚫 Weak";
-
-    let strengthRatingElement = document.getElementById("strength-rating");
-    if (strengthRatingElement) {
-        strengthRatingElement.innerText = `Strength Rating: ${rating}`;
-    } else {
-        console.error("Strength Rating element NOT found.");
-    }
 }
 
 function calculateMorphicScore() {
@@ -113,8 +100,36 @@ function calculateMorphicScore() {
     if (morphicElement) {
         morphicElement.textContent = morphicScore;
         console.log("Morphic Score Updated:", morphicScore);
+
+        // ✅ **NEW: Morphic Strength Analysis**
+        updateMorphicAnalysis(morphicScore);
     } else {
         console.error("Morphic Score element NOT found.");
+    }
+}
+
+function updateMorphicAnalysis(morphicScore) {
+    let analysisText = "";
+
+    if (morphicScore >= 95) {
+        analysisText = "🔥 **Supernova Strength** – Insanely high probability. These setups are almost unstoppable.";
+    } else if (morphicScore >= 85) {
+        analysisText = "⚡ **Hyper Morphic** – Strongest setups with rare confluence. High probability.";
+    } else if (morphicScore >= 70) {
+        analysisText = "✅ **Morphic Prime** – Excellent confluence. Strong signal with conviction.";
+    } else if (morphicScore >= 55) {
+        analysisText = "⚠️ **Stable Morphic** – Good alignment, but watch for additional confirmation.";
+    } else if (morphicScore >= 40) {
+        analysisText = "❓ **Morphic Flux** – Neutral to weak alignment. Use caution.";
+    } else {
+        analysisText = "🚫 **Morph Dissonance** – Weak signal. Risky and likely not worth taking.";
+    }
+
+    let analysisElement = document.getElementById("morphic-analysis");
+    if (analysisElement) {
+        analysisElement.innerHTML = analysisText;
+    } else {
+        console.error("Morphic Analysis element NOT found.");
     }
 }
 
