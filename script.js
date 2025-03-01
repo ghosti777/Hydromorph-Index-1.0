@@ -131,8 +131,9 @@ function updateMorphicAnalysis(morphicScore) {
 
     let analysisElement = document.getElementById("morphic-analysis");
     if (analysisElement) {
-    analysisElement.innerHTML = `<div class="hydro-analysis-box">${analysisText}</div>`;
+        analysisElement.innerHTML = `<em>${analysisText}</em>`; // ✅ Italics added
         console.log("Morphic Analysis Updated:", analysisText);
+}
     } else {
         console.error("Morphic Analysis element NOT found.");
     }
