@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
-
+/* 🔥 Import Marcellus SC Font */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
 /* 🔥 Reset & Base Styles */
 * {
     margin: 0;
@@ -41,12 +41,14 @@ body {
 
 /* 🔥 Title Styling */
 #title-section h2 {
-    font-family: 'Uncial Antiqua', cursive;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #00aaff; /* Electric Blue */
-    text-shadow: 3px 3px 6px rgba(0, 85, 170, 0.8); /* Subtle Darker Blue Glow */
+    font-family: 'Marcellus SC', serif; /* Apply new font */
+    font-size: 2rem; /* Adjust size if needed */
+    font-weight: normal; /* Keep it elegant */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
     margin-bottom: 20px;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if needed */
 }
 
 #pyro-score {
