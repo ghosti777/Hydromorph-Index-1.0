@@ -58,7 +58,7 @@ body {
     text-shadow: 0 0 10px rgba(0, 204, 255, 0.8); /* Soft glow */
     display: inline-block;
     padding: 8px 17px;
-    border-radius: 10px;
+    border-radius: 7px;
     box-shadow: 0 4px 10px rgba(0, 204, 255, 0.4); /* Slight depth effect */
 }
 
