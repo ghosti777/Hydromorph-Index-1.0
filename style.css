@@ -51,7 +51,7 @@ body {
 }
 
 #morphic-score {
-    font-size: 3rem; /* Larger size */
+    font-size: 1.5rem; /* Larger size */
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(135deg, #0077ff, #00ccff); /* Sleek blue gradient */
@@ -65,6 +65,7 @@ body {
 em {
     font-style: italic;
     font-size: 26px;
+    color: #0077FF; /* Unique blue */
 }
 
 #pyro-score {
