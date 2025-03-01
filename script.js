@@ -111,20 +111,30 @@ function calculateMorphicScore() {
     updateStrengthRating(morphicScore);
 }
 
-// 🔥 Strength Rating Based on Morphic Score
-function updateStrengthRating(morphicScore) {
-    let rating = morphicScore >= 95 ? "🔥 Supernova Strength 🔥 – Insanely high probability. These setups are almost unstoppable."
-        : morphicScore >= 85 ? "⚡ Hyper Morphic ⚡ - Strongest setups with rare confluence. High probability."
-        : morphicScore >= 70 ? "✅ Morphic Prime - Excellent confluence. Strong signal with conviction."
-        : morphicScore >= 55 ? "⚠️ Stable Morphic -  Good alignment, but watch for additional confirmation."
-        : morphicScore >= 40 ? "❓ Morphic Flux - Neutral to weak alignment. Use caution."
-        : "🚫 Morph Dissonance - Weak signal. Risky and likely not worth taking."; 
+function updateMorphicAnalysis(morphicScore) {
+    console.log("Updating Morphic Analysis...");
+    let analysisText = "";
 
-    let strengthRatingElement = document.getElementById("strength-rating");
-    if (strengthRatingElement) {
-        strengthRatingElement.innerText = `Strength Rating: ${rating}`;
+    if (morphicScore >= 95) {
+        analysisText = "🔥 **Supernova Strength** – Insanely high probability. These setups are almost unstoppable.";
+    } else if (morphicScore >= 85) {
+        analysisText = "⚡ **Hyper Morphic** – Strongest setups with rare confluence. High probability.";
+    } else if (morphicScore >= 70) {
+        analysisText = "✅ **Morphic Prime** – Excellent confluence. Strong signal with conviction.";
+    } else if (morphicScore >= 55) {
+        analysisText = "⚠️ **Stable Morphic** – Good alignment, but watch for additional confirmation.";
+    } else if (morphicScore >= 40) {
+        analysisText = "❓ **Morphic Flux** – Neutral to weak alignment. Use caution.";
     } else {
-        console.error("Strength Rating element NOT found.");
+        analysisText = "🚫 **Morph Dissonance** – Weak signal. Risky and likely not worth taking.";
+    }
+
+    let analysisElement = document.getElementById("morphic-analysis");
+    if (analysisElement) {
+        analysisElement.innerHTML = analysisText;
+        console.log("Morphic Analysis Updated:", analysisText);
+    } else {
+        console.error("Morphic Analysis element NOT found.");
     }
 }
 // 🔥 Auto-Update Morphic Score when Pyro Score changes
