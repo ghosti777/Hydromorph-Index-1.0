@@ -39,9 +39,11 @@ body {
 
 /* 🔥 Title Styling */
 #title-section h2 {
-    font-size: 2rem;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+    color: #00aaff; /* Electric Blue */
+    text-shadow: 3px 3px 6px rgba(0, 85, 170, 0.8); /* Subtle Darker Blue Glow */
     margin-bottom: 20px;
 }
 
