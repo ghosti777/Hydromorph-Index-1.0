@@ -78,35 +78,43 @@ function calculateHydro() {
 
     hydroScore = ((midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight)) * 3.33;
     
-       // ✅ Ensure elements exist before modifying them
-    if (document.getElementById("hydro-score")) {
-        document.getElementById("hydro-score").innerText = hydroScore.toFixed(1);
+    // ✅ Ensure elements exist before modifying them
+    let hydroElement = document.getElementById("hydro-score");
+    if (hydroElement) {
+        hydroElement.innerText = hydroScore.toFixed(1);
+
+        // ✅ **Delay Morphic Score Calculation Until DOM Updates**
+        setTimeout(calculateMorphicScore, 50);
     }
-    
-    calculateMorphicScore();
-}
 
-function calculateMorphicScore() {
-    let pyroScore = parseFloat(document.getElementById("pyro-score").value) || 0;
-    let hydroScore = parseFloat(document.getElementById("hydro-score").textContent) || 0;
-
-    let morphicScore = (pyroScore * 0.65) + (hydroScore * 0.35);
-    morphicScore = morphicScore.toFixed(2); // Keep two decimal places for precision
-
-    document.getElementById("morphic-score").textContent = morphicScore;
-}
-
-// 🔥 Auto-Update Morphic Score when Pyro Score changes
-document.getElementById("pyro-score").addEventListener("input", calculateMorphicScore);
-
-
+    // ✅ **Update Strength Rating**
     let rating = hydroScore >= 90 ? "🔥 Ultra Strong"
         : hydroScore >= 75 ? "✅ Strong"
         : hydroScore >= 50 ? "⚠️ Moderate"
         : hydroScore >= 30 ? "❓ Low"
         : "🚫 Weak";
 
-    if (document.getElementById("strength-rating")) {
-        document.getElementById("strength-rating").innerText = `Strength Rating: ${rating}`;
+    let strengthRatingElement = document.getElementById("strength-rating");
+    if (strengthRatingElement) {
+        strengthRatingElement.innerText = `Strength Rating: ${rating}`;
     }
 }
+
+function calculateMorphicScore() {
+    let pyroInput = document.getElementById("pyro-score");
+    let pyroScore = pyroInput ? parseFloat(pyroInput.value) || 0 : 0;
+
+    let hydroElement = document.getElementById("hydro-score");
+    let hydroScore = hydroElement ? parseFloat(hydroElement.textContent) || 0 : 0;
+
+    let morphicScore = (pyroScore * 0.65) + (hydroScore * 0.35);
+    morphicScore = morphicScore.toFixed(2); // Keep two decimal places
+
+    let morphicElement = document.getElementById("morphic-score");
+    if (morphicElement) {
+        morphicElement.textContent = morphicScore;
+    }
+}
+
+// 🔥 Auto-Update Morphic Score when Pyro Score changes
+document.getElementById("pyro-score").addEventListener("input", calculateMorphicScore);
