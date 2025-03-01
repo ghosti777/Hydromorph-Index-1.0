@@ -120,55 +120,41 @@ button:hover {
 .inline-checkbox {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Pushes checkbox fully to the right */
+    justify-content: space-between;
     width: 100%;
-    min-width: 100%; /* Ensures full width */
+    padding-right: 20px; /* Pushes checkbox away from text */
 }
 
 /* 🔥 Keep "Volume Surge" on One Line */
 .inline-checkbox label {
     flex-grow: 1;
     text-align: left;
-    white-space: nowrap; /* Prevents text from breaking into two lines */
+    white-space: nowrap; /* Prevents text from breaking */
+    font-size: 1rem; /* Ensures readability */
+    overflow: hidden; /* Prevents any odd wrapping */
 }
 
-/* 🔥 Force Checkbox to Move Right */
+/* 🔥 Push Checkbox Farther Right */
 .inline-checkbox input[type="checkbox"] {
-    margin-left: auto; /* Pushes checkbox all the way to the right */
-    margin-right: 12px; /* Adds spacing from the edge */
-    transform: scale(1.3); /* Makes it slightly bigger */
+    flex-shrink: 0; /* Prevents checkbox from resizing */
+    margin-left: auto; /* Pushes checkbox all the way right */
+    margin-right: 15px; /* Ensures space from edge */
+    transform: scale(1.4); /* Ensures checkbox is visible */
     vertical-align: middle;
 }
 
-/* 🔥 Ensure Proper Layout for Divergence Dropdown */
-label[for^="divergence-select"] {
-    display: block;
-    text-align: left;
-    margin-top: 10px;
-}
-
 @media (max-width: 768px) {
-    /* 🔥 Force Volume Surge & Checkbox to Stay Inline */
     .inline-checkbox {
-        display: flex;
-        flex-wrap: nowrap; /* Prevents wrapping */
-        align-items: center;
-        justify-content: space-between; /* Ensures checkbox is on the right */
         width: 100%;
+        padding-right: 25px; /* Ensures extra space on mobile */
     }
 
-    /* 🔥 Keep "Volume Surge" on One Line */
     .inline-checkbox label {
         flex-grow: 1;
-        text-align: left;
-        white-space: nowrap; /* Prevents breaking into two lines */
-        font-size: 0.95rem; /* Slightly reduce font size for spacing */
+        font-size: 0.95rem; /* Adjust font size slightly */
     }
 
-    /* 🔥 Move Checkbox Fully to the Right */
     .inline-checkbox input[type="checkbox"] {
-        margin-left: auto; /* Pushes checkbox to the right */
-        margin-right: 8px; /* Adds spacing from edge */
-        transform: scale(1.2); /* Ensures it's visible */
+        margin-right: 10px; /* Keeps spacing consistent */
     }
 }
