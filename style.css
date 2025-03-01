@@ -116,14 +116,14 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 102, 255, 1);
 }
 
-/* 🔥 Fix Alignment for Volume Surge */
+/* 🔥 Force Volume Surge Text & Checkbox to Stay in Place */
 .inline-checkbox {
     display: flex;
+    flex-direction: row; /* Ensures left-to-right alignment */
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 10px; /* Ensures spacing between text and checkbox */
-    padding-right: 10px; /* Provides spacing near right edge */
+    padding-right: 15px; /* Adds spacing near right edge */
 }
 
 /* 🔥 Keep "Volume Surge" on One Line */
@@ -133,13 +133,14 @@ button:hover {
     white-space: nowrap; /* Prevents text from breaking */
     overflow: hidden; /* Ensures it doesn’t break layout */
     text-overflow: ellipsis; /* Adds "..." if text is too long */
-    font-size: 1rem; /* Adjusts readability */
+    font-size: 1rem; /* Ensures consistent text size */
 }
 
-/* 🔥 Force Checkbox to Right Side */
+/* 🔥 Lock Checkbox to Right Side */
 .inline-checkbox input[type="checkbox"] {
-    flex-shrink: 0; /* Prevents checkbox from being resized */
-    margin-left: auto; /* Forces checkbox to right */
+    width: 20px; /* Fixed width to prevent shifting */
+    height: 20px; /* Fixed height to match scaling */
+    margin-left: auto; /* Pushes checkbox fully to the right */
     transform: scale(1.3); /* Slightly larger checkbox */
     vertical-align: middle;
 }
