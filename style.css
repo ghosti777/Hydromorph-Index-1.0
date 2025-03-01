@@ -70,6 +70,17 @@ em {
     font-size: 26px;
     color: #0077FF; /* Unique blue */
 }
+.hydro-analysis-box {
+    background: rgba(0, 0, 0, 0.75); /* Dark background for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    color: #00aaff; /* Hydro’s blue */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); /* Soft blue glow */
+    margin-top: 20px; /* Adds spacing */
+}
 
 #pyro-score {
     width: 90%;
