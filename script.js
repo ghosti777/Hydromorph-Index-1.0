@@ -116,17 +116,17 @@ function updateMorphicAnalysis(morphicScore) {
     let analysisText = "";
 
     if (morphicScore >= 95) {
-        analysisText = "🔥 **Supernova Strength** – Insanely high probability. These setups are almost unstoppable.";
+        analysisText = "🔥 Ultra-Morphic Supernova 🔥 – Insanely high probability. These setups are almost unstoppable.";
     } else if (morphicScore >= 85) {
-        analysisText = "⚡ **Hyper Morphic** – Strongest setups with rare confluence. High probability.";
+        analysisText = "⚡ Hyper-Morphic ⚡️ - Strongest setups with rare confluence. High probability.";
     } else if (morphicScore >= 70) {
-        analysisText = "✅ **Morphic Prime** – Excellent confluence. Strong signal with conviction.";
+        analysisText = "✅ Morphic Prime ✅ - Excellent confluence. Strong signal with conviction.";
     } else if (morphicScore >= 55) {
-        analysisText = "⚠️ **Stable Morphic** – Good alignment, but watch for additional confirmation.";
+        analysisText = "⚠️ Stable Morphic ⚠️– Good alignment, but watch for additional confirmation.";
     } else if (morphicScore >= 40) {
-        analysisText = "❓ **Morphic Flux** – Neutral to weak alignment. Use caution.";
+        analysisText = "🚨 Morphic Flux 🚨 – Neutral to weak alignment. Use caution.";
     } else {
-        analysisText = "🚫 **Morph Dissonance** – Weak signal. Risky and likely not worth taking.";
+        analysisText = "🚫 Morphic Dissonance 🚫 – Weak signal. Risky and likely not worth taking.";
     }
 
     let analysisElement = document.getElementById("morphic-analysis");
