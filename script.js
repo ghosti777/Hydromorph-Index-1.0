@@ -26,40 +26,31 @@ function getPyroScore() {
 
 function calculateHydro() {
     let hydroScore = 0;
+    console.log("Calculating Hydro...");
 
-    // Get selected midpoint timeframe
     let midpoint = document.getElementById("midpoint-select").value;
 
-    // Base midpoint weight
     let midpointWeight = 0.1429;
-
-    // ✅ Dynamic Midpoint Boost Adjustments
     if (["1M", "2M", "3M", "5M"].includes(midpoint)) {
-        midpointWeight += 0.0429; // Flat +30% boost
+        midpointWeight += 0.0429;
     } else if (midpoint === "15M") {
-        midpointWeight += 0.032; // Flat +22.5% boost
-    } 
-    // ✅ 30M remains unchanged
+        midpointWeight += 0.032;
+    }
 
-    // ✅ **Indicator Scoring**
     function getIndicatorScore(section) {
         let score = 0;
 
-        // **Dual Cloud Setup**
         let dualCloudValue = document.getElementById(`dual-cloud-select-${section}`).value;
         let dualCloudScore = { "1": 10, "2": 7, "3": 4, "4": -5 };
         score += dualCloudScore[dualCloudValue] || 0;
 
-        // **Entry Conditions**
         let entryValue = document.getElementById(`premium-discount-select-${section}`).value;
         let entryScore = { "1": -5, "2": 6, "3": 4 };
         score += entryScore[entryValue] || 0;
 
-        // **Volume Surge**
         let volumeSurge = document.getElementById(`volume-surge-${section}`).checked ? 7 : 0;
         score += volumeSurge;
 
-        // **Divergence**
         let divergenceValue = document.getElementById(`divergence-select-${section}`).value;
         let divergenceScore = { "favorable": 6, "unfavorable": -4 };
         score += divergenceScore[divergenceValue] || 0;
@@ -67,27 +58,28 @@ function calculateHydro() {
         return score;
     }
 
-    // ✅ **Calculate Scores for Each Section**
     let ltfStrength = getIndicatorScore("ltf");
     let midpointStrength = getIndicatorScore("midpoint");
     let htfStrength = getIndicatorScore("htf");
 
-    // ✅ **New Finalized Weights**
     let ltfWeight = 0.40;
     let htfWeight = 0.45;
 
     hydroScore = ((midpointStrength * midpointWeight) + (ltfStrength * ltfWeight) + (htfStrength * htfWeight)) * 3.33;
-    
-    // ✅ Ensure elements exist before modifying them
+
+    console.log("Hydro Score Calculated:", hydroScore);
+
     let hydroElement = document.getElementById("hydro-score");
     if (hydroElement) {
         hydroElement.innerText = hydroScore.toFixed(1);
+        console.log("Hydro Score Updated in UI");
 
-        // ✅ **Delay Morphic Score Calculation Until DOM Updates**
-        setTimeout(calculateMorphicScore, 50);
+        // ✅ Immediately Calculate Morphic Score
+        calculateMorphicScore();
+    } else {
+        console.error("Hydro Score element NOT found.");
     }
 
-    // ✅ **Update Strength Rating**
     let rating = hydroScore >= 90 ? "🔥 Ultra Strong"
         : hydroScore >= 75 ? "✅ Strong"
         : hydroScore >= 50 ? "⚠️ Moderate"
@@ -97,22 +89,32 @@ function calculateHydro() {
     let strengthRatingElement = document.getElementById("strength-rating");
     if (strengthRatingElement) {
         strengthRatingElement.innerText = `Strength Rating: ${rating}`;
+    } else {
+        console.error("Strength Rating element NOT found.");
     }
 }
 
 function calculateMorphicScore() {
+    console.log("Calculating Morphic Score...");
+
     let pyroInput = document.getElementById("pyro-score");
     let pyroScore = pyroInput ? parseFloat(pyroInput.value) || 0 : 0;
 
     let hydroElement = document.getElementById("hydro-score");
     let hydroScore = hydroElement ? parseFloat(hydroElement.textContent) || 0 : 0;
 
+    console.log("Pyro Score:", pyroScore);
+    console.log("Hydro Score:", hydroScore);
+
     let morphicScore = (pyroScore * 0.65) + (hydroScore * 0.35);
-    morphicScore = morphicScore.toFixed(2); // Keep two decimal places
+    morphicScore = morphicScore.toFixed(2);
 
     let morphicElement = document.getElementById("morphic-score");
     if (morphicElement) {
         morphicElement.textContent = morphicScore;
+        console.log("Morphic Score Updated:", morphicScore);
+    } else {
+        console.error("Morphic Score element NOT found.");
     }
 }
 
