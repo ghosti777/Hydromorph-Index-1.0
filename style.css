@@ -127,19 +127,26 @@ button:hover {
     }
 }
 
-/* 🔥 Fix Alignment for Volume Surge & Divergence */
-label {
+/* 🔥 Fix Alignment for Volume Surge & Checkboxes */
+.inline-checkbox {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin: 5px 0;
 }
 
-/* 🔥 Inline Checkboxes */
-label input[type="checkbox"] {
-    margin-left: 8px; /* Space between text and checkbox */
+/* 🔥 Adjust Checkbox Placement */
+.inline-checkbox label {
+    margin: 0;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.inline-checkbox input[type="checkbox"] {
+    margin-left: 10px; /* Space between text and checkbox */
     transform: scale(1.2); /* Slightly larger checkbox */
-    vertical-align: middle; /* Aligns checkbox properly */
+    vertical-align: middle;
 }
 
 /* 🔥 Ensure Proper Layout for Divergence Dropdown */
