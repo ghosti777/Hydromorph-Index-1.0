@@ -18,7 +18,7 @@ function updateTimeframes() {
 document.getElementById("midpoint-select").addEventListener("change", updateTimeframes);
 
 // ✅ Add event listener for "Calculate Hydro" button
-document.getElementById("calculate-button").addEventListener("click", calculateHydro);
+document.getElementById("calculate-hydro").addEventListener("click", calculateHydro);
 
 function getPyroScore() {
     return parseFloat(document.getElementById("pyro-score").value) || 0;
