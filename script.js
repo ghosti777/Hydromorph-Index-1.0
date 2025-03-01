@@ -129,12 +129,11 @@ function updateMorphicAnalysis(morphicScore) {
         analysisText = "🚫 Morphic Dissonance 🚫 – Weak signal. Risky and likely not worth taking.";
     }
 
-    let analysisElement = document.getElementById("morphic-analysis");
+        let analysisElement = document.getElementById("morphic-analysis");
     if (analysisElement) {
         analysisElement.innerHTML = `<em>${analysisText}</em>`; // ✅ Italics added
         console.log("Morphic Analysis Updated:", analysisText);
-}
-    } else {
+    } else { // ✅ Now properly structured
         console.error("Morphic Analysis element NOT found.");
     }
 }
