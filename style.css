@@ -122,7 +122,8 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-right: 20px; /* Pushes checkbox away from text */
+    gap: 10px; /* Ensures spacing between text and checkbox */
+    padding-right: 10px; /* Provides spacing near right edge */
 }
 
 /* 🔥 Keep "Volume Surge" on One Line */
@@ -130,16 +131,16 @@ button:hover {
     flex-grow: 1;
     text-align: left;
     white-space: nowrap; /* Prevents text from breaking */
-    font-size: 1rem; /* Ensures readability */
-    overflow: hidden; /* Prevents any odd wrapping */
+    overflow: hidden; /* Ensures it doesn’t break layout */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    font-size: 1rem; /* Adjusts readability */
 }
 
-/* 🔥 Push Checkbox Farther Right */
+/* 🔥 Force Checkbox to Right Side */
 .inline-checkbox input[type="checkbox"] {
-    flex-shrink: 0; /* Prevents checkbox from resizing */
-    margin-left: auto; /* Pushes checkbox all the way right */
-    margin-right: 15px; /* Ensures space from edge */
-    transform: scale(1.4); /* Ensures checkbox is visible */
+    flex-shrink: 0; /* Prevents checkbox from being resized */
+    margin-left: auto; /* Forces checkbox to right */
+    transform: scale(1.3); /* Slightly larger checkbox */
     vertical-align: middle;
 }
 
